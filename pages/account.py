@@ -4,6 +4,7 @@ import firebase_admin
 from firebase_admin import credentials
 from dotenv import load_dotenv
 import os
+import base64
 
 # Load environment variables
 load_dotenv()
@@ -81,7 +82,27 @@ firebaseConfig = {
 firebase = pyrebase.initialize_app(firebaseConfig)
 auth = firebase.auth()
 
-st.title("CureCancAI - Account Page")
+
+
+def get_base64_image(image_path):
+    with open(image_path, "rb") as img_file:
+        encoded = base64.b64encode(img_file.read()).decode()
+    return f"data:image/png;base64,{encoded}"
+
+image_base64 = get_base64_image("assets/logo.png")
+
+# Display logo and title in a row using HTML inside st.markdown
+st.markdown(
+    f"""
+    <div style="display: flex; align-items: center;">
+        <a href="/" target="_self">
+            <img src="{image_base64}" width="40" style="margin-right: 10px;" alt="logo">
+        </a>
+        <h1 style="margin: 0;">CureCancAI - Account Page</h1>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 add_custom_css()
 
 # Initialize session state variables if they don't exist
