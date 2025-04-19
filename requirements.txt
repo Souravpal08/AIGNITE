@@ -1,0 +1,14 @@
+streamlit
+python-dotenv
+google-generativeai
+firebase-admin
+plotly
+authlib
+scikit-learn
+joblib
+pandas
+numpy
+toml
+msgpack
+matplotlib
+pyrebase4
