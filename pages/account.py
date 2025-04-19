@@ -17,12 +17,21 @@ def add_custom_css():
             color: #dcdcdc;
         }
         /* Text input styles */
-        input {
-            background-color: #333333;
-            color: #ffffff;
-            border: 1px solid #444444;
-            padding: 8px;
-        }
+        .stTextInput>div>div>input {
+        background-color: #333333;
+        color: #ffffff;
+        border: 1px solid #444444;
+        padding: 8px;
+        transition: all 0.3s ease;
+    }
+    
+    /* Input focus state */
+    .stTextInput>div>div>input:focus {
+        outline: none;
+        border-color: #ffcc00;
+        box-shadow: 0 0 5px #ffcc00;
+        background-color: #3a3a3a;
+    }
         /* Header styles */
         h1, h2, h3, h4, h5, h6 {
             color: #d4af37; /* Gold-like color for headers */
