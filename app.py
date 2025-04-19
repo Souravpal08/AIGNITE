@@ -1,4 +1,5 @@
 import streamlit as st
+import base64
 
 # Define your pages
 account_page = st.Page(
@@ -54,7 +55,21 @@ st.sidebar.title("CureCancAI")
 st.sidebar.text("Made by ByteForce")
 
 # Display the logo (optional)
-st.logo("assets/logo.png")
+def get_base64_image(image_path):
+    with open(image_path, "rb") as img_file:
+        encoded = base64.b64encode(img_file.read()).decode()
+    return f"data:image/png;base64,{encoded}"
+
+image_base64 = get_base64_image("assets/logo.png")
+
+st.sidebar.markdown(
+    f"""
+    <a href="/" target="_self">
+        <img src="{image_base64}" width="40" alt="logo">
+    </a>
+    """,
+    unsafe_allow_html=True
+)
 
 # Run Navigation
 pg.run()
