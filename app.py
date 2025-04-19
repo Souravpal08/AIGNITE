@@ -1,5 +1,4 @@
 import streamlit as st
-import base64
 
 # Define your pages
 account_page = st.Page(
@@ -50,9 +49,9 @@ else:
         }
     )
 
-# Shared across all pages
 st.sidebar.title("CureCancAI")
 st.sidebar.text("Made by ByteForce")
+
 
 # Display the logo (optional)
 def get_base64_image(image_path):
@@ -70,6 +69,7 @@ st.sidebar.markdown(
     """,
     unsafe_allow_html=True
 )
+
 
 # Run Navigation
 pg.run()
