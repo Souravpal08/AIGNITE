@@ -48,8 +48,24 @@ else:
         }
     )
 
-st.sidebar.title("CureCancAI")
-st.sidebar.text("Made by ByteForce")
+st.sidebar.markdown(
+    f"""
+    <style>
+    .sidebar-bottom {{
+        position: fixed;
+        bottom: 20px;
+        width: 100%;
+        text-align: center;
+    }}
+    </style>
+
+    <div class="sidebar-bottom">
+        <h1 style="margin-bottom: 2px;">CureCancAI</h1>
+        <p style="font-size: 15px; margin: 0;">Made by ByteForce</p>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
 # Run Navigation
 pg.run()
