@@ -1,7 +1,7 @@
 import streamlit as st
 import pyrebase
-import firebase_admin
-from firebase_admin import credentials
+# import firebase_admin
+# from firebase_admin import credentials
 from dotenv import load_dotenv
 import os
 import base64
